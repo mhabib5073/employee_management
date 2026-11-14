@@ -2,7 +2,10 @@ from fastapi import FastAPI, Depends
 from app.database import Base, engine
 from app.api.employee_api import router as emp_router
 
-app = FastAPI()
+app = FastAPI(
+    title="Employee Management API",
+    version="1.0.0"
+)
 
 Base.metadata.create_all(bind=engine)
 
